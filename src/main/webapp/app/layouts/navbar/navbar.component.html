@@ -27,8 +27,37 @@
                     </span>
                 </a>
                 <ul class="dropdown-menu" ngbDropdownMenu aria-labelledby="entity-menu">
+                    
                     <!-- jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here -->
                 </ul>
+            </li>
+            <li *ngSwitchCase="true" ngbDropdown class="nav-item dropdown pointer" display="dynamic">
+                    <a class="nav-link dropdown-toggle" ngbDropdownToggle href="javascript:void(0);" id="proxy-menu" >
+                            <span>
+                                <fa-icon icon="user"></fa-icon>
+                                <span>
+                                    Proxy
+                                </span>
+                            </span>
+                        </a>
+                        <ul class="dropdown-menu" ngbDropdownMenu aria-labelledby="proxy-menu">
+                                <li>
+                                        <a class="dropdown-item" >
+                                            <fa-icon icon="user" fixedWidth="true"></fa-icon>
+                                            <span>Proxy Setting</span>
+                                        </a>
+                                </li>
+                                <li>
+                                        <a class="dropdown-item" >
+                                            <fa-icon icon="user" fixedWidth="true"></fa-icon>
+                                            <span>Proxy Inbox</span>
+                                        </a>
+                                </li>
+
+                        </ul>
+            </li>
+           
+
             </li>
             <li *jhiHasAnyAuthority="'ROLE_ADMIN'" ngbDropdown class="nav-item dropdown pointer" display="dynamic" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                 <a class="nav-link dropdown-toggle" ngbDropdownToggle href="javascript:void(0);" id="admin-menu">
@@ -41,7 +70,13 @@
                     <li>
                         <a class="dropdown-item" routerLink="admin/user-management" routerLinkActive="active" (click)="collapseNavbar()">
                             <fa-icon icon="user" fixedWidth="true"></fa-icon>
-                            <span>User management</span>
+                            <span>Create User</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="task" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <fa-icon icon="asterisk" fixedWidth="true"></fa-icon>
+                            <span>Create Task</span>
                         </a>
                     </li>
                     <li>
